@@ -8,7 +8,7 @@ import seaborn as sns
 
 # load dataframe
 
-df=pd.read_csv("231030_clean_table_for_analysis.csv")
+df=pd.read_csv("231030_clean_table_for_analysis.csv", low_memory=False, header = 0, index_col=0, na_values='n/a')
 
 
 # creating pages in Streamlit 
