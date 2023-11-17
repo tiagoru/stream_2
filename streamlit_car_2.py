@@ -3,41 +3,46 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-#test
 from PIL import Image
 
 image = Image.open('france_road.jpg')
 
-st.image(image, caption='Sunrise by the mountains')
+st.image(image, caption='')
 
 
-# load dataframe
+# load dataframe and pre processing 
 
 df=pd.read_csv("231030_clean_table_for_analysis.csv", low_memory=False, header = 0, index_col=0, na_values='n/a')
 
 
 # creating pages in Streamlit 
-image = Image.open('sunrise.jpg')
 
-st.image(image, caption='Sunrise by the mountains')
 st.title("Road Accidents in France")
 st.sidebar.title("Table of contents")
-pages=["Exploration", "DataVizualization", "Modelling"]
+pages=["Projetc","Exploration", "DataVizualization", "Modelling"]
 page=st.sidebar.radio("Go to", pages)
 
 
 # Editing the first page "Presentation of the data"
-if page == pages[0] :
+if page == pages[0]: 
+    st.write("### Project")
+    st.write("#### Aim: optimize three classification models with the best overall performances for predicting severe accidents (at least one hospitalized or killed person in an accident versus only slightly or non-injured persons), and then calibrate, evaluate and interpret all three models")
+    st.write("##### authors: Johanna, Tiago Tobias ")
+
+if page == pages[1] :
     st.write("### Data description")
     st.write(df.shape)
+    st.write("#### data set provide by the French goverment from 2005 to 2021")
     st.dataframe(df.describe())
 
     if st.checkbox("Show NaN") :
         st.dataframe(df.isna().sum())
 
 
+
+
 # editing visualization of the data
-if page == pages[1] : 
+if page == pages[2] : 
     st.write("### DataVizualization")
     fig = plt.figure()
     # Plot for Severe Cases
@@ -120,8 +125,9 @@ if page == pages[1] :
 
 # modeling results
 
-if page == pages[2] : 
+if page == pages[3] : 
     st.write("### modelling")
+    st.write("### Under contruction")
 
 
 
