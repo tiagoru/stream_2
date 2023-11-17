@@ -19,7 +19,7 @@ df=pd.read_csv("231030_clean_table_for_analysis.csv", low_memory=False, header =
 
 st.title("Road Accidents in France")
 st.sidebar.title("Table of contents")
-pages=["Projetc","Exploration", "DataVizualization", "Modelling"]
+pages=["Project","Exploration", "DataVizualization", "Modelling"]
 page=st.sidebar.radio("Go to", pages)
 
 
