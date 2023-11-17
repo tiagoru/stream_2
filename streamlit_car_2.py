@@ -10,7 +10,7 @@ image = Image.open('france_road.jpg')
 st.image(image, caption='')
 
 
-# load dataframe and pre processing 
+# load dataframe after cleaning
 
 df=pd.read_csv("231030_clean_table_for_analysis.csv", low_memory=False, header = 0, index_col=0, na_values='n/a')
 
@@ -44,7 +44,7 @@ if page == pages[1] :
 # editing visualization of the data
 if page == pages[2] : 
     st.write("### DataVizualization")
-    fig = plt.figure()
+    fig = plt.figure(figsize=(18, 8))
     # Plot for Severe Cases
     
     sns.countplot(x='an', data=df[df['grav'] == 4], palette='viridis')
