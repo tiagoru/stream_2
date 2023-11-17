@@ -4,6 +4,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 #test
+from PIL import Image
+
+image = Image.open('sunrise.jpg')
+
+st.image(image, caption='Sunrise by the mountains')
 
 
 # load dataframe
@@ -12,6 +17,9 @@ df=pd.read_csv("231030_clean_table_for_analysis.csv", low_memory=False, header =
 
 
 # creating pages in Streamlit 
+image = Image.open('sunrise.jpg')
+
+st.image(image, caption='Sunrise by the mountains')
 st.title("Road Accidents in France")
 st.sidebar.title("Table of contents")
 pages=["Exploration", "DataVizualization", "Modelling"]
