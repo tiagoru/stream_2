@@ -6,7 +6,7 @@ import seaborn as sns
 #test
 from PIL import Image
 
-image = Image.open('sunrise.jpg')
+image = Image.open('france_road.jpg')
 
 st.image(image, caption='Sunrise by the mountains')
 
